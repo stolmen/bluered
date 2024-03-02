@@ -17,21 +17,15 @@
   }
    </style>
 </head>
-<div id="changeColor" onclick="changeBackgroundColor()"></div>:w
+<div id="changeColor" onclick="toggleBackgroundColor()"></div>:w
 
 <script>
-function changeBackgroundColor() {
+var on=false;
+function toggleBackgroundColor() {
   var element = document.getElementById("changeColor");
-  var randomColor = getRandomColor();
-  element.style.backgroundColor = randomColor;
+  var color = on ? 'red' : 'green';
+  element.style.backgroundColor =color;
+  on= on? false : true;
 }
 
-function getRandomColor() {
-  var letters = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
 </script>
